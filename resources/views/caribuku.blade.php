@@ -18,24 +18,27 @@
             <div class="row">
                 <div class="col-md-4"></div>
                 <div class="col-md-4">
-                    <div class="form-group">
-                        <select name="filter_penulis" id="filter_penulis" class="form-control" required>
-                            <option value="">Pilih Penulis</option>
-                            <option value="Js. Khairen">Js. Khairen</option>
-                            <option value="Febriani Ad">Febriani Ad</option>
-                        </select>
-                    </div>
+                        <div class="form-group">
+                                <select name="filter_penulis" id="filter_penulis" class="form-control" required>
+                                    <option value="">Pilih Nama Penulis</option>
+                                    @foreach($angka_tahun as $penulis)
+        
+                                    <option value="{{ $penulis->penulis }}">{{ $penulis->penulis }}</option>
+        
+                                    @endforeach
+                                </select>
+                            </div>
                     <div class="form-group">
                         <select name="filter_terbit" id="filter_terbit" class="form-control" required>
                             <option value="">Pilih Tahun Terbit</option>
-                            @foreach($angka_tahun as $tahun_terbit)
-
-                            <option value="{{ $tahun_terbit->tahun_terbit }}">{{ $tahun_terbit->tahun_terbit }}</option>
-
-                            @endforeach
+                            <option value="2019">2019</option>
+                            <option value="2018">2018</option>
+                            <option value="2017">2017</option>
+                            <option value="2016">2016</option>
+                            <option value="2015">2015</option>
+                            <option value="2014">2014</option>
                         </select>
                     </div>
-                    
                     <div class="form-group" align="center">
                         <button type="button" name="filter" id="filter" class="btn btn-info">Filter</button>
 

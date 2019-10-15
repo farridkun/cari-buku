@@ -24,9 +24,9 @@ class CariBukuController extends Controller
             return datatables()->of($data)->make(true);
         }
         $angka_tahun = DB::table('tbl_buku')
-            ->select('tahun_terbit')
-            ->groupBy('tahun_terbit')
-            ->orderBy('tahun_terbit', 'ASC')
+            ->select('penulis')
+            ->groupBy('penulis')
+            ->orderBy('penulis', 'ASC')
             ->get();
         return view('caribuku', compact('angka_tahun'));
     }
